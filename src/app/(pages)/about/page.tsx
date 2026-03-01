@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, Variants, easeOut } from "framer-motion";
 
-import Counter from "@/app/_Components/Counter";
+import Counter from "@/app/_components/Counter";
 import SkillsSection from "./SkillsSection";
 import ExperienceSection from "./ExperienceSection";
-import EducationSection from "@/app/_Components/EducationSection";
+import EducationSection from "@/app/_components/EducationSection";
 import LoadingScreen from "@/app/_components/LoadingScreen";
 
 /* ================= ANIMATIONS ================= */
