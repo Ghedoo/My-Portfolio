@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mails, Menu, X } from "lucide-react";
-import { Github, Linkedin, Twitter, Facebook, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Facebook } from "lucide-react";
 import Logo from "./logo";
 
 import HireMeNavbar from "./HireMeNavbar";
@@ -14,9 +14,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/project", label: "Projects" },
- 
 ];
-
 
 // روابط السوشيال مع أيقوناتهم
 const socialLinks = [
@@ -24,7 +22,10 @@ const socialLinks = [
   { Icon: Linkedin, href: "https://linkedin.com/in/yourusername" },
   { Icon: Twitter, href: "https://twitter.com/yourusername" },
   { Icon: Facebook, href: "https://facebook.com/yourusername" },
-  { Icon: Mails,href:"https://mail.google.com/mail/?view=cm&fs=1&to=raghedalkadre997@gmail.com&su=Hello&body=Hi%20there!" },
+  {
+    Icon: Mails,
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=raghedalkadre997@gmail.com&su=Hello&body=Hi%20there!",
+  },
 ];
 
 export default function Navbar() {
@@ -67,25 +68,25 @@ export default function Navbar() {
           {/* RIGHT */}
           <div className="flex items-center gap-6 flex-1 justify-end">
             {/* Social Icons (DESKTOP) */}
-         <div className="hidden lg:flex gap-5 text-white">
-  {socialLinks.map(({ Icon, href }, i) => (
-    <a
-      key={i}
-      href={href}               // الرابط الحقيقي
-      target="_blank"           // يفتح الرابط في تبويب جديد
-      rel="noopener noreferrer" // أمان
-      className="hover:text-purple-400 transition"
-    >
-      <Icon size={22} />
-    </a>
-  ))}
-</div>
+            <div className="hidden lg:flex gap-5 text-white">
+              {socialLinks.map(({ Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href} // الرابط الحقيقي
+                  target="_blank" // يفتح الرابط في تبويب جديد
+                  rel="noopener noreferrer" // أمان
+                  className="hover:text-purple-400 transition"
+                >
+                  <Icon size={22} />
+                </a>
+              ))}
+            </div>
 
             {/* Hamburger (MOBILE ONLY) */}
             {/* LEFT: Hire Me + RIGHT: Hamburger */}
             <div className="flex items-center justify-between w-full lg:hidden gap-6">
               {/* زر Hire Me على اليسار */}
-             <HireMeNavbar />
+              <HireMeNavbar />
 
               {/* زر الهامبرغر على اليمين */}
               <button onClick={() => setOpen(true)} className="text-white">
@@ -133,19 +134,19 @@ export default function Navbar() {
               ))}
 
               {/* Social */}
-           <div className="flex gap-6 mt-10 text-black/75">
-  {socialLinks.map(({ Icon, href }, i) => (
-    <a
-      key={i}
-      href={href}                // الرابط الحقيقي
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-purple-400 transition"
-    >
-      <Icon size={26} />
-    </a>
-  ))}
-</div>
+              <div className="flex gap-6 mt-10 text-black/75">
+                {socialLinks.map(({ Icon, href }, i) => (
+                  <a
+                    key={i}
+                    href={href} // الرابط الحقيقي
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-400 transition"
+                  >
+                    <Icon size={26} />
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
